@@ -18,7 +18,12 @@ const Layout = ({children, home}:{children: React.ReactNode, home?: boolean}) =>
         <header className={styles.header}>
             {home ? (<>
                 <img src="/images/profile.jpg" className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} alt={name} />
-                <h1 className={utilStyles.heading2Xl}>{name}</h1>
+                <h1 className={utilStyles.headingXl}>{name}</h1>
+                <div>
+                    <a href="https://twitter.com/senbei7777">
+                        <img src="/images/twitter.png" alt="twitter" width="40" height="40" />
+                    </a>
+                </div>
             </>) : (<>
                 <Link href="/">
                     <a>
