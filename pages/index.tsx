@@ -5,7 +5,11 @@ import Layout, {siteTitle} from "../components/layout"
 import utilStyles from "../styles/utils.module.css"
 import {getSortedPostsData} from '../lib/posts';
 
-export default function Home({allPostsData}) {
+export default function Home({allPostsData}: {allPostsData:{
+  date: string;
+  title: string;
+  id: string;
+}[]}) {
     return (
     <Layout home>
       <Head>
@@ -13,10 +17,7 @@ export default function Home({allPostsData}) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          [導入文章]
-        </p>
-        <p>
-          サンプルサイト
+          JavaScriptについて勉強したことをまとめています
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -41,7 +42,7 @@ export default function Home({allPostsData}) {
   )
 }
 
-export async function getStaticProps(){
+export const getStaticProps = async () => {
   const allPostsData = getSortedPostsData()
   return {
     props: {
